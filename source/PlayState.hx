@@ -860,7 +860,6 @@ class PlayState extends MusicBeatState
 			case 'halloweenbg':
 				boyfriend.y -= 500;
 				boyfriend.x += 100;
-				camFollow.x = boyfriend.getMidpoint().x - 150;
 				dad.y -= 200;
 			case 'school':
 				boyfriend.x += 200;
@@ -2196,8 +2195,8 @@ class PlayState extends MusicBeatState
 
 				switch (curStage)
 				{
-					case 'limo':
-						camFollow.x = boyfriend.getMidpoint().x - 300;
+					case 'halloweenbg':
+						camFollow.x = boyfriend.getMidpoint().x - 200;
 					case 'mall':
 						camFollow.y = boyfriend.getMidpoint().y - 200;
 					case 'school':
@@ -3501,13 +3500,13 @@ class PlayState extends MusicBeatState
 				{
 					case 1:
 					    camHUD.zoom += 0.6;
-					    FlxTween.tween(FlxG.camera, {zoom: 0.8}, 1, {ease: FlxEase.circInOut});
+					    FlxTween.tween(FlxG.camera, {zoom: 0.8}, 1, {ease: FlxEase.quadInOut});
 						new FlxTimer().start(1 , function(tmr:FlxTimer)
 						{
 							defaultCamZoom = 0.8;
 						});
 					case 64:
-					    FlxTween.tween(FlxG.camera, {zoom: 0.6}, 1, {ease: FlxEase.circInOut});
+					    FlxTween.tween(FlxG.camera, {zoom: 0.6}, 1, {ease: FlxEase.quadInOut});
 						new FlxTimer().start(1 , function(tmr:FlxTimer)
 						{
 							defaultCamZoom = 0.6;
@@ -3518,7 +3517,7 @@ class PlayState extends MusicBeatState
 					    camHUD.zoom += 0.03;
 				    case 1728:
 					    dad.playAnim('singUP-alt', true); 
-					    FlxTween.tween(FlxG.camera, {zoom: 0.9}, 1, {ease: FlxEase.circInOut});
+					    FlxTween.tween(FlxG.camera, {zoom: 0.9}, 1, {ease: FlxEase.quadInOut});
 						new FlxTimer().start(1 , function(tmr:FlxTimer)
 						{
 							defaultCamZoom = 0.8;
@@ -3527,14 +3526,14 @@ class PlayState extends MusicBeatState
 					    dad.playAnim('funni', false);
 					case 1801:
 					    dad.playAnim('ending', false);
-					    FlxTween.tween(FlxG.camera, {zoom: 1.0}, 1, {ease: FlxEase.circInOut});
+					    FlxTween.tween(FlxG.camera, {zoom: 1.0}, 1, {ease: FlxEase.quadInOut});
 						new FlxTimer().start(1 , function(tmr:FlxTimer)
 						{
 							defaultCamZoom = 1.0;
 						});
 						
 					case 1811:
-					    FlxTween.tween(FlxG.camera, {zoom: 0.6}, 1, {ease: FlxEase.circInOut});
+					    FlxTween.tween(FlxG.camera, {zoom: 0.6}, 1, {ease: FlxEase.quadInOut});
 						new FlxTimer().start(1 , function(tmr:FlxTimer)
 						{
 							defaultCamZoom = 0.6;
