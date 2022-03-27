@@ -11,7 +11,7 @@ class Character extends FlxSprite
 {
 	public var animOffsets:Map<String, Array<Dynamic>>;
 	public var debugMode:Bool = false;
-	public var iconColor:String = “FF82d4f5”;
+	public var iconColor:String = “FF2C5A8B”;
 
 	public var isPlayer:Bool = false;
 	public var curCharacter:String = 'bf';
