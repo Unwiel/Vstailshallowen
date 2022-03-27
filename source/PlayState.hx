@@ -150,7 +150,7 @@ class PlayState extends MusicBeatState
 	public var iconP2:HealthIcon; //what could go wrong?
 	public var camHUD:FlxCamera;
 	private var camGame:FlxCamera;
-	private var SplashNote:NoteSplash;ñ1
+	private var SplashNote:NoteSplash;
 
 	public static var offsetTesting:Bool = false;
 
