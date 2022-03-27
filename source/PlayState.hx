@@ -882,7 +882,7 @@ class PlayState extends MusicBeatState
 				gf.y += 300;
 		}
 
-		add(gf);
+		//add(gf);
 
 		// Shitty layering but whatev it works LOL
 		if (curStage == 'limo')
@@ -3637,9 +3637,7 @@ class PlayState extends MusicBeatState
 					bgGirls.dance();
 				}
 				
-			case 'halloweenbg':
-				remove('gf');
-
+			
 			case 'mall':
 				if(FlxG.save.data.distractions){
 					upperBoppers.animation.play('bop', true);
