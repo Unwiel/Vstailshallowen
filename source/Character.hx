@@ -11,6 +11,7 @@ class Character extends FlxSprite
 {
 	public var animOffsets:Map<String, Array<Dynamic>>;
 	public var debugMode:Bool = false;
+	public var iconColor:String = “FF82d4f5”;
 
 	public var isPlayer:Bool = false;
 	public var curCharacter:String = 'bf';
@@ -500,17 +501,18 @@ class Character extends FlxSprite
 				playAnim('idle');
 				
 			case 'tailspikachu':
+			    iconColor = ‘FF9400’;
 				var tex = Paths.getSparrowAtlas('characters/tailspikachu');
 				frames = tex;
-				animation.addByPrefix('idle', 'tailspikachu idle', 24, false);
-				animation.addByPrefix('singUP', 'tailspikachu up', 24, false);
-				animation.addByPrefix('singLEFT', 'tailspikachu left', 24, false);
-				animation.addByPrefix('singRIGHT', 'tailspikachu right', 24, false);
-				animation.addByPrefix('singDOWN', 'tailspikachu down', 24, false);
-				animation.addByPrefix('singUPmiss', 'tailspikachu 3miss', 24, false);
-				animation.addByPrefix('singLEFTmiss', 'tailspikachu 1miss', 24, false);
-				animation.addByPrefix('singRIGHTmiss', 'tailspikachu 4miss', 24, false);
-				animation.addByPrefix('singDOWNmiss', 'tailspikachu 2miss', 24, false);
+				animation.addByPrefix('idle', 'tailspikachu idle', 15, false);
+				animation.addByPrefix('singUP', 'tailspikachu up', 16, false);
+				animation.addByPrefix('singRIGHT', 'tailspikachu left', 14, false);
+				animation.addByPrefix('singLEFT', 'tailspikachu right', 17, false);
+				animation.addByPrefix('singDOWN', 'tailspikachu down', 17, false);
+				animation.addByPrefix('singUPmiss', 'tailspikachu 3miss', 14, false);
+				animation.addByPrefix('singLEFTmiss', 'tailspikachu 1miss', 14, false);
+				animation.addByPrefix('singRIGHTmiss', 'tailspikachu 4miss', 14, false);
+				animation.addByPrefix('singDOWNmiss', 'tailspikachu 2miss', 14, false);
 
 				addOffset('idle', -5);
 				addOffset("singUP", -29, 27);
@@ -526,18 +528,20 @@ class Character extends FlxSprite
 				flipX = true;
 				
 			case 'sonicexe':
-				// DAD ANIMATION LOADING CODE
+				iconColor = ‘FF2C5A8B’;
 				tex = Paths.getSparrowAtlas('characters/sonicexe', 'shared');
 				frames = tex;
-				animation.addByPrefix('idle', 'sonicexe idle', 24);
-				animation.addByPrefix('singUP', 'sonicexe up', 24);
-				animation.addByPrefix('singRIGHT', 'sonicexe right', 24);
-				animation.addByPrefix('singDOWN', 'sonicexe down', 24);
-				animation.addByPrefix('singLEFT', 'sonicexe left', 24);
+				animation.addByPrefix('idle', 'sonicexe idle', 16);
+				animation.addByPrefix('singUP', 'sonicexe up', 16);
+				animation.addByPrefix('singRIGHT', 'sonicexe right', 14);
+				animation.addByPrefix('singDOWN', 'sonicexe down', 17);
+				animation.addByPrefix('singLEFT', 'sonicexe left', 17);
 				animation.addByPrefix('funni', 'sonicexe funni', 24);
+				animation.addByPrefix('singUP-alt', 'sonicexe laugh', 16);
 
 				addOffset('idle');
 				addOffset("singUP", -6, 50);
+				addOffset("singUP-alt", -6, 50);
 				addOffset("singRIGHT", 0, 27);
 				addOffset("singLEFT", -10, 10);
 				addOffset("singDOWN", 0, -30);
