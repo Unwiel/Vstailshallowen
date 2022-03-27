@@ -11,12 +11,13 @@ class Character extends FlxSprite
 {
 	public var animOffsets:Map<String, Array<Dynamic>>;
 	public var debugMode:Bool = false;
-	public var iconColor:String = “0xFF2C5A8B”;
 
 	public var isPlayer:Bool = false;
 	public var curCharacter:String = 'bf';
 
 	public var holdTimer:Float = 0;
+
+        public var iconColor:String = “FF82d4f5”; 
 
 	public function new(x:Float, y:Float, ?character:String = "bf", ?isPlayer:Bool = false)
 	{
@@ -501,7 +502,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 				
 			case 'tailspikachu':
-			    iconColor = ‘0xFF9400’;
+			        iconColor = ‘FF9400’;
 				var tex = Paths.getSparrowAtlas('characters/tailspikachu');
 				frames = tex;
 				animation.addByPrefix('idle', 'tailspikachu idle', 15, false);
@@ -528,7 +529,7 @@ class Character extends FlxSprite
 				flipX = true;
 				
 			case 'sonicexe':
-				iconColor = ‘0xFF2C5A8B’;
+				iconColor = ‘FF2C5A8B’;
 				tex = Paths.getSparrowAtlas('characters/sonicexe', 'shared');
 				frames = tex;
 				animation.addByPrefix('idle', 'sonicexe idle', 16);
