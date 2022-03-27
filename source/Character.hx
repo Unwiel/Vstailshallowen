@@ -2,9 +2,9 @@ package;
 
 import flixel.FlxG;
 import flixel.FlxSprite;
+import flixel.util.FlxColor;
 import flixel.animation.FlxBaseAnimation;
 import flixel.graphics.frames.FlxAtlasFrames;
-import flixel.util.FlxColor;
 
 using StringTools;
 
@@ -505,15 +505,15 @@ class Character extends FlxSprite
 			case 'tailspikachu':
 				var tex = Paths.getSparrowAtlas('characters/tailspikachu');
 				frames = tex;
-				animation.addByPrefix('idle', 'tailspikachu idle', 15, false);
-				animation.addByPrefix('singUP', 'tailspikachu up', 16, false);
-				animation.addByPrefix('singRIGHT', 'tailspikachu left', 14, false);
-				animation.addByPrefix('singLEFT', 'tailspikachu right', 17, false);
-				animation.addByPrefix('singDOWN', 'tailspikachu down', 17, false);
-				animation.addByPrefix('singUPmiss', 'tailspikachu 3miss', 14, false);
-				animation.addByPrefix('singLEFTmiss', 'tailspikachu 1miss', 14, false);
-				animation.addByPrefix('singRIGHTmiss', 'tailspikachu 4miss', 14, false);
-				animation.addByPrefix('singDOWNmiss', 'tailspikachu 2miss', 14, false);
+				animation.addByPrefix('idle', 'tailspikachu idle', 12, false);
+				animation.addByPrefix('singUP', 'tailspikachu up', 12, false);
+				animation.addByPrefix('singRIGHT', 'tailspikachu left', 12, false);
+				animation.addByPrefix('singLEFT', 'tailspikachu right', 12, false);
+				animation.addByPrefix('singDOWN', 'tailspikachu down', 12, false);
+				animation.addByPrefix('singUPmiss', 'tailspikachu 3miss', 12, false);
+				animation.addByPrefix('singLEFTmiss', 'tailspikachu 1miss', 12, false);
+				animation.addByPrefix('singRIGHTmiss', 'tailspikachu 4miss', 12, false);
+				animation.addByPrefix('singDOWNmiss', 'tailspikachu 2miss', 12, false);
 
 				addOffset('idle', -5);
 				addOffset("singUP", -29, 27);
@@ -533,13 +533,13 @@ class Character extends FlxSprite
 			case 'sonicexe':
 				tex = Paths.getSparrowAtlas('characters/sonicexe', 'shared');
 				frames = tex;
-				animation.addByPrefix('idle', 'sonicexe idle', 16);
-				animation.addByPrefix('singUP', 'sonicexe up', 16);
-				animation.addByPrefix('singRIGHT', 'sonicexe right', 14);
-				animation.addByPrefix('singDOWN', 'sonicexe down', 17);
-				animation.addByPrefix('singLEFT', 'sonicexe left', 17);
-				animation.addByPrefix('funni', 'sonicexe funni', 24);
-				animation.addByPrefix('singUP-alt', 'sonicexe laugh', 16);
+				animation.addByPrefix('idle', 'sonicexe idle', 12);
+				animation.addByPrefix('singUP', 'sonicexe up', 12);
+				animation.addByPrefix('singRIGHT', 'sonicexe right', 12);
+				animation.addByPrefix('singDOWN', 'sonicexe down', 12);
+				animation.addByPrefix('singLEFT', 'sonicexe left', 12);
+				animation.addByPrefix('funni', 'sonicexe funni', 14);
+				animation.addByPrefix('singUP-alt', 'sonicexe laugh', 12);
 
 				addOffset('idle');
 				addOffset("singUP", -6, 50);
@@ -547,7 +547,7 @@ class Character extends FlxSprite
 				addOffset("singRIGHT", 0, 27);
 				addOffset("singLEFT", -10, 10);
 				addOffset("singDOWN", 0, -30);
-				addOffset("funni", 0, -30);
+				addOffset("funni");
 
 				playAnim('idle'); 
 				

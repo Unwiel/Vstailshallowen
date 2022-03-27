@@ -857,7 +857,8 @@ class PlayState extends MusicBeatState
 				boyfriend.x += 320;
 				dad.y -= 80;
 			case 'halloweenbg':
-				boyfriend.y -= 300;
+				boyfriend.y -= 500;
+				boyfriend.x += 100;
 				dad.y -= 200;
 			case 'school':
 				boyfriend.x += 200;
@@ -3490,6 +3491,42 @@ class PlayState extends MusicBeatState
 			luaModchart.executeState('stepHit',[curStep]);
 		}
 		#end
+		
+		
+		if (curSong.toLowerCase() == 'timorous')
+			{
+				switch(curStep)
+				{
+					case 1:
+					    camHUD.zoom += 0.4;
+					    FlxTween.tween(FlxG.camera, {zoom: 1.2}, 0.5, {ease: FlxEase.quadInOut});
+						new FlxTimer().start(0.5 , function(tmr:FlxTimer)
+						{
+							defaultCamZoom = 1.2;
+						});
+					case 64:
+					    FlxTween.tween(FlxG.camera, {zoom: 0.6}, 0.5, {ease: FlxEase.quadInOut});
+						new FlxTimer().start(0.5 , function(tmr:FlxTimer)
+						{
+							defaultCamZoom = 0.6;
+						});
+					case 328:
+					    camHUD.zoom += 0.03;
+				    case 360:
+					    camHUD.zoom += 0.03;
+				    case 360:
+					    altAnim = '-alt';
+					    FlxTween.tween(FlxG.camera, {zoom: 1.2}, 0.5, {ease: FlxEase.quadInOut});
+						new FlxTimer().start(0.5 , function(tmr:FlxTimer)
+						{
+							defaultCamZoom = 1.2;
+						});
+					case 360:
+					    dad.playAnim('funni', true); 
+					    
+						
+				}
+			}
 
 
 
@@ -3557,10 +3594,7 @@ class PlayState extends MusicBeatState
 			camHUD.zoom += 0.03;
 		}
 		
-		if (curSong.toLowerCase() == 'timorous')
-		{
-			remove(gf);
-		}
+		
 
 		if (camZooming && FlxG.camera.zoom < 1.35 && curBeat % 4 == 0)
 		{
@@ -3602,6 +3636,9 @@ class PlayState extends MusicBeatState
 				if(FlxG.save.data.distractions){
 					bgGirls.dance();
 				}
+				
+			case 'halloweenbg':
+				remove('gf');
 
 			case 'mall':
 				if(FlxG.save.data.distractions){
