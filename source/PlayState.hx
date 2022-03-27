@@ -860,7 +860,7 @@ class PlayState extends MusicBeatState
 			case 'halloweenbg':
 				boyfriend.y -= 500;
 				boyfriend.x += 100;
-				camPosbf.x -= 200
+				camPosbf.x -= 200;
 				dad.y -= 200;
 			case 'school':
 				boyfriend.x += 200;
@@ -3525,7 +3525,7 @@ class PlayState extends MusicBeatState
 						});
 					case 1756:
 					    dad.playAnim('funni', false);
-					case 1756:
+					case 1801:
 					    dad.playAnim('ending', false); 
 						
 				}
