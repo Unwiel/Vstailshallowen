@@ -3514,14 +3514,14 @@ class PlayState extends MusicBeatState
 					    camHUD.zoom += 0.03;
 				    case 360:
 					    camHUD.zoom += 0.03;
-				    case 360:
-					    altAnim = '-alt';
+				    case 1728:
+					    dad.playAnim('singUP-alt', true); 
 					    FlxTween.tween(FlxG.camera, {zoom: 1.2}, 0.5, {ease: FlxEase.quadInOut});
 						new FlxTimer().start(0.5 , function(tmr:FlxTimer)
 						{
 							defaultCamZoom = 1.2;
 						});
-					case 360:
+					case 1756:
 					    dad.playAnim('funni', true); 
 					    
 						
