@@ -796,6 +796,7 @@ class PlayState extends MusicBeatState
 		dad = new Character(100, 100, SONG.player2);
 
 		var camPos:FlxPoint = new FlxPoint(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y);
+		var camPosbf:FlxPoint = new FlxPoint(boyfriend.getGraphicMidpoint().x, boyfriend.getGraphicMidpoint().y);
 
 		switch (SONG.player2)
 		{
@@ -859,6 +860,7 @@ class PlayState extends MusicBeatState
 			case 'halloweenbg':
 				boyfriend.y -= 500;
 				boyfriend.x += 100;
+				camPosbf.x -= 200
 				dad.y -= 200;
 			case 'school':
 				boyfriend.x += 200;
@@ -3498,14 +3500,14 @@ class PlayState extends MusicBeatState
 				switch(curStep)
 				{
 					case 1:
-					    camHUD.zoom += 0.4;
-					    FlxTween.tween(FlxG.camera, {zoom: 1.2}, 0.5, {ease: FlxEase.quadInOut});
-						new FlxTimer().start(0.5 , function(tmr:FlxTimer)
+					    camHUD.zoom += 0.6;
+					    FlxTween.tween(FlxG.camera, {zoom: 0.9}, 1, {ease: FlxEase.circInOut});
+						new FlxTimer().start(1 , function(tmr:FlxTimer)
 						{
-							defaultCamZoom = 1.2;
+							defaultCamZoom = 0.9;
 						});
 					case 64:
-					    FlxTween.tween(FlxG.camera, {zoom: 0.6}, 0.5, {ease: FlxEase.quadInOut});
+					    FlxTween.tween(FlxG.camera, {zoom: 0.6}, 1, {ease: FlxEase.circInOut});
 						new FlxTimer().start(0.5 , function(tmr:FlxTimer)
 						{
 							defaultCamZoom = 0.6;
@@ -3516,14 +3518,15 @@ class PlayState extends MusicBeatState
 					    camHUD.zoom += 0.03;
 				    case 1728:
 					    dad.playAnim('singUP-alt', true); 
-					    FlxTween.tween(FlxG.camera, {zoom: 1.2}, 0.5, {ease: FlxEase.quadInOut});
+					    FlxTween.tween(FlxG.camera, {zoom: 0.9}, 1, {ease: FlxEase.quadInOut});
 						new FlxTimer().start(0.5 , function(tmr:FlxTimer)
 						{
-							defaultCamZoom = 1.2;
+							defaultCamZoom = 0.9;
 						});
 					case 1756:
-					    dad.playAnim('funni', true); 
-					    
+					    dad.playAnim('funni', false);
+					case 1756:
+					    dad.playAnim('ending', false); 
 						
 				}
 			}

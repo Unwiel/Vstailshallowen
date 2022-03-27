@@ -538,8 +538,9 @@ class Character extends FlxSprite
 				animation.addByPrefix('singRIGHT', 'sonicexe right', 12);
 				animation.addByPrefix('singDOWN', 'sonicexe down', 12);
 				animation.addByPrefix('singLEFT', 'sonicexe left', 12);
-				animation.addByPrefix('funni', 'sonicexe funni', 14);
-				animation.addByPrefix('singUP-alt', 'sonicexe laugh', 12);
+				animation.addByPrefix('funni', 'sonicexe funni', 12, false);
+				animation.addByPrefix('ending', 'sonicexe ded', 14, true);
+				animation.addByPrefix('singUP-alt', 'sonicexe laugh', 12, false);
 
 				addOffset('idle');
 				addOffset("singUP", -6, 50);
@@ -548,6 +549,7 @@ class Character extends FlxSprite
 				addOffset("singLEFT", -10, 10);
 				addOffset("singDOWN", 0, -30);
 				addOffset("funni");
+				addOffset("ending");
 
 				playAnim('idle'); 
 				
