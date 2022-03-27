@@ -16,8 +16,8 @@ class Character extends FlxSprite
 	public var curCharacter:String = 'bf';
 
 	public var holdTimer:Float = 0;
-
-        public var iconColor:String = “FF82d4f5”; 
+	
+	public var healthbarColor:FlxColor = FlxColor.RED;
 
 	public function new(x:Float, y:Float, ?character:String = "bf", ?isPlayer:Bool = false)
 	{
@@ -502,7 +502,6 @@ class Character extends FlxSprite
 				playAnim('idle');
 				
 			case 'tailspikachu':
-			        iconColor = ‘FF9400’;
 				var tex = Paths.getSparrowAtlas('characters/tailspikachu');
 				frames = tex;
 				animation.addByPrefix('idle', 'tailspikachu idle', 15, false);
@@ -528,8 +527,9 @@ class Character extends FlxSprite
 
 				flipX = true;
 				
+				healthbarColor = FlxColor.fromRGB(255, 135, 0);
+				
 			case 'sonicexe':
-				iconColor = ‘FF2C5A8B’;
 				tex = Paths.getSparrowAtlas('characters/sonicexe', 'shared');
 				frames = tex;
 				animation.addByPrefix('idle', 'sonicexe idle', 16);
@@ -549,6 +549,8 @@ class Character extends FlxSprite
 				addOffset("funni", 0, -30);
 
 				playAnim('idle'); 
+				
+				healthbarColor = FlxColor.fromRGB(44, 90, 139);
 		}
 
 		dance();
