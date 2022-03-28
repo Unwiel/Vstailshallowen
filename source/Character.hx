@@ -554,6 +554,57 @@ class Character extends FlxSprite
 				playAnim('idle'); 
 				
 				healthbarColor = FlxColor.fromRGB(44, 90, 139);
+				
+			case 'knuckles':
+				var tex = Paths.getSparrowAtlas('characters/knuckles');
+				frames = tex;
+				animation.addByPrefix('idle', 'knuckles idle', 12, false);
+				animation.addByPrefix('singUP', 'knuckles up', 12, false);
+				animation.addByPrefix('singRIGHT', 'knuckles left', 12, false);
+				animation.addByPrefix('singLEFT', 'knuckles right', 12, false);
+				animation.addByPrefix('singDOWN', 'knuckles down', 12, false);
+				animation.addByPrefix('singUPmiss', 'knuckles umiss', 12, false);
+				animation.addByPrefix('singLEFTmiss', 'knuckles rmiss', 12, false);
+				animation.addByPrefix('singRIGHTmiss', 'knuckles lmiss', 12, false);
+				animation.addByPrefix('singDOWNmiss', 'knuckles dmiss', 12, false);
+				animation.addByPrefix('cajita', 'knuckles rings', 12, false);
+
+				addOffset('idle', -5);
+				addOffset("singUP", -29, 27);
+				addOffset("singRIGHT", -38, -7);
+				addOffset("singLEFT", 12, -6);
+				addOffset("singDOWN", -10, -50);
+				addOffset("singUPmiss", -29, 27);
+				addOffset("singRIGHTmiss", -30, 21);
+				addOffset("singLEFTmiss", 12, 24);
+				addOffset("singDOWNmiss", -11, -19);
+				addOffset('cajita', -5);
+				playAnim('idle');
+
+				flipX = true;
+				
+				healthbarColor = FlxColor.fromRGB(255, 0, 0);
+				
+			case '2sonicexe':
+				tex = Paths.getSparrowAtlas('characters/knucklesonicexe', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'knucklesonicexe idle', 12);
+				animation.addByPrefix('singUP', 'knucklesonicexe up', 12);
+				animation.addByPrefix('singRIGHT', 'knucklesonicexe right', 12);
+				animation.addByPrefix('singDOWN', 'knucklesonicexe down', 12);
+				animation.addByPrefix('singLEFT', 'knucklesonicexe left', 12);
+				animation.addByPrefix('ending', 'knucklesonicexe shit', 1, false);
+
+				addOffset('idle');
+				addOffset("singUP", -6, 50);
+				addOffset("singRIGHT", 0, 27);
+				addOffset("singLEFT", -10, 10);
+				addOffset("singDOWN", 0, -30);
+				addOffset("ending");
+
+				playAnim('idle'); 
+				
+				healthbarColor = FlxColor.fromRGB(44, 90, 139);
 		}
 
 		dance();
@@ -675,6 +726,14 @@ class Character extends FlxSprite
 						playAnim('danceLeft');
 				default:
 					playAnim('idle');
+					
+				case 'knuckles': 
+				    if (animation.curAnim.name.startsWith('sing'))
+				    {
+						   holdTimer += elapsed;
+					}
+			        
+ 
 			}
 		}
 	}

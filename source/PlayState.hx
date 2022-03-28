@@ -171,6 +171,12 @@ class PlayState extends MusicBeatState
 	var bg:FlxSprite;
 	var house:FlxSprite;
 	var sidewalk:FlxSprite;
+	
+	// Stage de la enchilada
+	var master:FlxSprite;
+	var knucklesnight:FlxSprite;
+	var broken:FlxSprite;
+	var bigmountain:FlxSprite;
 
 	var limo:FlxSprite;
 	var grpLimoDancers:FlxTypedGroup<BackgroundDancer>;
@@ -775,6 +781,36 @@ class PlayState extends MusicBeatState
 					    add(sidewalk);  
 					
 				}
+				
+			case 'knucklesstage':
+				{
+						defaultCamZoom = 0.7;
+						curStage = 'knucklesstage';
+						
+					    var knucklesnight:FlxSprite = new FlxSprite(-570, -270).loadGraphic(Paths.image('knucklesnight'));
+					    knucklesnight.scrollFactor.set(0.7, 0.7);
+					    knucklesnight.scale.set(1.2, 1.2); 
+					    add(knucklesnight);
+					
+					    master = new FlxSprite(-560, -300).loadGraphic(Paths.image('master'));
+					    master.scrollFactor.set(1.0, 1.0);
+					    master.scale.set(1.1, 1.1); 
+					    add(master); 
+					
+					
+					    broken = new FlxSprite(-1320, -400).loadGraphic(Paths.image('broken'));
+					    broken.scrollFactor.set(0.8, 0.8);
+					    broken.scale.set(1.2, 1.2); 
+					    add(broken);
+					    broken.visible = false;
+					   
+					    bigmountain = new FlxSprite(-590, -400).loadGraphic(Paths.image('bigmountain'));
+					    bigmountain.scrollFactor.set(0.7, 0.7);
+					    bigmountain.scale.set(1.2, 1.2); 
+					    add(bigmountain);  
+					    bigmountain.visible = false; 
+					    
+				}
 		}
 		var gfVersion:String = 'gf';
 
@@ -861,6 +897,10 @@ class PlayState extends MusicBeatState
 				boyfriend.y -= 500;
 				boyfriend.x += 100;
 				dad.y -= 200;
+			case 'knucklesstage':
+				boyfriend.y -= 500;
+				boyfriend.x += 100;
+				dad.y -= 200; 
 			case 'school':
 				boyfriend.x += 200;
 				boyfriend.y += 220;
@@ -2196,7 +2236,7 @@ class PlayState extends MusicBeatState
 				switch (curStage)
 				{
 					case 'halloweenbg':
-						camFollow.x = boyfriend.getMidpoint().x - 200;
+						camFollow.x = boyfriend.getMidpoint().x - 350;
 					case 'mall':
 						camFollow.y = boyfriend.getMidpoint().y - 200;
 					case 'school':
