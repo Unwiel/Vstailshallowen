@@ -635,7 +635,7 @@ class Character extends FlxSprite
 	override function update(elapsed:Float)
 	{
 	         
-		if (!curCharacter.startsWith('bf'))
+		if (!curCharacter.startsWith('bf') && !curCharacter.startsWith('tailspikachu') && !curCharacter.startsWith('knuckles'))
 		{
 			if (animation.curAnim.name.startsWith('sing'))
 			{
@@ -657,14 +657,7 @@ class Character extends FlxSprite
 			}
 		}
 		
-		if (curCharacter == 'knuckles')
-		{
-			if (animation.curAnim.name.startsWith('sing'))
-			{
-				holdTimer += elapsed;
-			}
-		}
-
+		
 		switch (curCharacter)
 		{
 			case 'gf':

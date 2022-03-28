@@ -898,6 +898,8 @@ class PlayState extends MusicBeatState
 				boyfriend.x += 100;
 				dad.y -= 200;
 			case 'knucklesstage':
+			    boyfriend.scale.set(0.8, 0.8);
+			    dad.scale.set(0.8, 0.8);   
 				boyfriend.y -= 500;
 				boyfriend.x += 100;
 				dad.y -= 200; 
