@@ -642,11 +642,7 @@ class Character extends FlxSprite
 				holdTimer += elapsed;
 			}
 			
-			case 'knuckles': 
-				    if (animation.curAnim.name.startsWith('sing'))
-				    {
-						   holdTimer += elapsed;
-					}
+			
 					
 
 			var dadVar:Float = 4;
@@ -658,6 +654,14 @@ class Character extends FlxSprite
 				trace('dance');
 				dance();
 				holdTimer = 0;
+			}
+		}
+		
+		if (curCharacter == 'knuckles')
+		{
+			if (animation.curAnim.name.startsWith('sing'))
+			{
+				holdTimer += elapsed;
 			}
 		}
 
