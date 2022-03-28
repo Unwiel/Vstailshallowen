@@ -634,17 +634,20 @@ class Character extends FlxSprite
 
 	override function update(elapsed:Float)
 	{
-                case 'knuckles': 
-				    if (animation.curAnim.name.startsWith('sing'))
-				    {
-						   holdTimer += elapsed;
-					}
+	         
 		if (!curCharacter.startsWith('bf'))
 		{
 			if (animation.curAnim.name.startsWith('sing'))
 			{
 				holdTimer += elapsed;
 			}
+			
+			case 'knuckles': 
+				    if (animation.curAnim.name.startsWith('sing'))
+				    {
+						   holdTimer += elapsed;
+					}
+					
 
 			var dadVar:Float = 4;
 
@@ -732,11 +735,7 @@ class Character extends FlxSprite
 				default:
 					playAnim('idle');
 					
-				case 'knuckles': 
-				    if (animation.curAnim.name.startsWith('sing'))
-				    {
-						   holdTimer += elapsed;
-					}
+				
 			        
  
 			}
