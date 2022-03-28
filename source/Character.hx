@@ -634,6 +634,11 @@ class Character extends FlxSprite
 
 	override function update(elapsed:Float)
 	{
+                case 'knuckles': 
+				    if (animation.curAnim.name.startsWith('sing'))
+				    {
+						   holdTimer += elapsed;
+					}
 		if (!curCharacter.startsWith('bf'))
 		{
 			if (animation.curAnim.name.startsWith('sing'))
