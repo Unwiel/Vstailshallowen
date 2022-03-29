@@ -605,6 +605,34 @@ class Character extends FlxSprite
 				playAnim('idle'); 
 				
 				healthbarColor = FlxColor.fromRGB(44, 90, 139);
+				
+			case 'knuckles-alt':
+				var tex = Paths.getSparrowAtlas('characters/knuckles');
+				frames = tex;
+				animation.addByPrefix('idle', 'knuckles 1idle', 12, false);
+				animation.addByPrefix('singUP', 'knuckles 1up', 12, false);
+				animation.addByPrefix('singRIGHT', 'knuckles 1left', 12, false);
+				animation.addByPrefix('singLEFT', 'knuckles 1right', 12, false);
+				animation.addByPrefix('singDOWN', 'knuckles 1down', 12, false);
+				animation.addByPrefix('singUPmiss', 'knuckles umiss', 12, false);
+				animation.addByPrefix('singLEFTmiss', 'knuckles rmiss', 12, false);
+				animation.addByPrefix('singRIGHTmiss', 'knuckles lmiss', 12, false);
+				animation.addByPrefix('singDOWNmiss', 'knuckles dmiss', 12, false);
+
+				addOffset('idle', -5);
+				addOffset("singUP", -29, 27);
+				addOffset("singRIGHT", -38, -7);
+				addOffset("singLEFT", 12, -6);
+				addOffset("singDOWN", -10, -50);
+				addOffset("singUPmiss", -29, 27);
+				addOffset("singRIGHTmiss", -30, 21);
+				addOffset("singLEFTmiss", 12, 24);
+				addOffset("singDOWNmiss", -11, -19);
+				playAnim('idle');
+
+				flipX = true;
+				
+				healthbarColor = FlxColor.fromRGB(255, 0, 0);
 		}
 
 		dance();

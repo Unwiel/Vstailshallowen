@@ -794,7 +794,7 @@ class PlayState extends MusicBeatState
 					
 					    master = new FlxSprite(-560, -300).loadGraphic(Paths.image('master'));
 					    master.scrollFactor.set(1.0, 1.0);
-					    master.scale.set(1.1, 1.1); 
+					    master.scale.set(1.2, 1.2); 
 					    add(master); 
 					
 					
@@ -900,8 +900,9 @@ class PlayState extends MusicBeatState
 			case 'knucklesstage':
 			    boyfriend.scale.set(0.8, 0.8);
 			    dad.scale.set(0.8, 0.8);   
-				boyfriend.y -= 500;
-				boyfriend.x += 100;
+				boyfriend.y -= 550;
+				boyfriend.x -= 150;
+				dad.x -= 150;
 				dad.y -= 200; 
 			case 'school':
 				boyfriend.x += 200;
@@ -3580,6 +3581,39 @@ class PlayState extends MusicBeatState
 						{
 							defaultCamZoom = 0.6;
 						}); 
+						
+				}
+			}
+			
+			if (curSong.toLowerCase() == 'minacious')
+			{
+				switch(curStep)
+				{
+					case 1551:
+					    FlxTween.tween(FlxG.camera, {zoom: 1.1}, 1, {ease: FlxEase.quadInOut});
+						new FlxTimer().start(1 , function(tmr:FlxTimer)
+						{
+							defaultCamZoom = 1.1;
+						});
+						
+					case 1552:
+					      boyfriend.playAnim('cajita', false);
+					
+					case 1559:
+					      FlxG.camera.flash(FlxColor.WHITE, 1);
+					      FlxG.sound.play(Paths.sound('Sfx1'));
+					
+					case 1563:
+					      remove(boyfriend);
+                          boyfriend= new Character(100, 100, 'knuckles-alt');
+                          add(boyfriend);
+                         
+                    case 1565:
+					    FlxTween.tween(FlxG.camera, {zoom: 0.7}, 1, {ease: FlxEase.quadInOut});
+						new FlxTimer().start(1 , function(tmr:FlxTimer)
+						{
+							defaultCamZoom = 0.7;
+						});
 						
 				}
 			}
