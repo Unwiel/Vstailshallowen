@@ -878,6 +878,11 @@ class PlayState extends MusicBeatState
        
         switch (SONG.player1)
 		{
+		   
+		      case 'knuckles-alt':
+		           boyfriend.y -= 550;
+				   boyfriend.x += 100;
+				   boyfriend.scale.set(0.8, 0.8); 
 		
 		} 
 		// REPOSITIONING PER STAGE
@@ -905,7 +910,7 @@ class PlayState extends MusicBeatState
 			    boyfriend.scale.set(0.8, 0.8);
 			    dad.scale.set(0.8, 0.8);   
 				boyfriend.y -= 550;
-				boyfriend.x -= 150;
+				boyfriend.x += 100;
 				dad.x -= 150;
 				dad.y -= 200; 
 			case 'school':
@@ -3611,9 +3616,7 @@ class PlayState extends MusicBeatState
 					      remove(boyfriend);
                           boyfriend = new Boyfriend(770, 450, 'knuckles-alt');
                           add(boyfriend);
-                          boyfriend.y -= 550;
-				          boyfriend.x -= 150;
-				          boyfriend.scale.set(0.8, 0.8);
+                          
                          
                     case 1565:
 					    FlxTween.tween(FlxG.camera, {zoom: 0.7}, 1, {ease: FlxEase.quadInOut});
@@ -3622,6 +3625,36 @@ class PlayState extends MusicBeatState
 							defaultCamZoom = 0.7;
 						});
 						
+					case 2144:
+
+                        boyfriend.playAnim('punch', false); 
+					    FlxTween.tween(FlxG.camera, {zoom: 1.1}, 1, {ease: FlxEase.quadInOut});
+						new FlxTimer().start(1 , function(tmr:FlxTimer)
+						{
+							defaultCamZoom = 1.1;
+						});
+						
+					case 2160:
+					      dad.playAnim('ending', false);
+					
+					case 2175:
+					      FlxG.camera.flash(FlxColor.WHITE, 1.5);
+					      FlxG.sound.play(Paths.sound('sfx2'));
+					      remove(boyfriend);
+                          boyfriend = new Boyfriend(770, 450, 'rings');
+                          add(boyfriend);
+                          remove(dad);
+                          bigmountain.visible = true;
+                          broken.visible = true;
+                          master.visible = false;
+                          FlxG.camera.shake(0.005);
+                         
+                      case 2177:
+						FlxTween.tween(FlxG.camera, {zoom: 0.8}, 1, {ease: FlxEase.quadInOut});
+						new FlxTimer().start(1 , function(tmr:FlxTimer)
+						{
+							defaultCamZoom = 0.8;
+						});
 				}
 			}
 
