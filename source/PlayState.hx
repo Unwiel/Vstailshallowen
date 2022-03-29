@@ -3605,7 +3605,7 @@ class PlayState extends MusicBeatState
 					
 					case 1563:
 					      remove(boyfriend);
-                          boyfriend = new Character(770, 450, 'knuckles-alt');
+                          boyfriend = new Boyfriend(770, 450, 'knuckles-alt');
                           add(boyfriend);
                          
                     case 1565:
