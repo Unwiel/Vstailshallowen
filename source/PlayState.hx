@@ -875,7 +875,11 @@ class PlayState extends MusicBeatState
 
 		
 		boyfriend = new Boyfriend(770, 450, SONG.player1);
-
+       
+        switch (SONG.player1)
+		{
+		
+		} 
 		// REPOSITIONING PER STAGE
 		switch (curStage)
 		{
@@ -3607,6 +3611,9 @@ class PlayState extends MusicBeatState
 					      remove(boyfriend);
                           boyfriend = new Boyfriend(770, 450, 'knuckles-alt');
                           add(boyfriend);
+                          boyfriend.y -= 550;
+				          boyfriend.x -= 150;
+				          boyfriend.scale.set(0.8, 0.8);
                          
                     case 1565:
 					    FlxTween.tween(FlxG.camera, {zoom: 0.7}, 1, {ease: FlxEase.quadInOut});

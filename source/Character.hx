@@ -558,7 +558,7 @@ class Character extends FlxSprite
 			case 'knuckles':
 				var tex = Paths.getSparrowAtlas('characters/knuckles');
 				frames = tex;
-				animation.addByPrefix('idle', 'knuckles idle', 12, false);
+				animation.addByPrefix('idle', 'knuckles idle', 14, false);
 				animation.addByPrefix('singUP', 'knuckles up', 12, false);
 				animation.addByPrefix('singRIGHT', 'knuckles left', 12, false);
 				animation.addByPrefix('singLEFT', 'knuckles right', 12, false);
@@ -567,7 +567,7 @@ class Character extends FlxSprite
 				animation.addByPrefix('singLEFTmiss', 'knuckles rmiss', 12, false);
 				animation.addByPrefix('singRIGHTmiss', 'knuckles lmiss', 12, false);
 				animation.addByPrefix('singDOWNmiss', 'knuckles dmiss', 12, false);
-				animation.addByPrefix('cajita', 'knuckles rings', 12, false);
+				animation.addByPrefix('cajita', 'knuckles rings', 10, false);
 
 				addOffset('idle', -5);
 				addOffset("singUP", -29, 27);
