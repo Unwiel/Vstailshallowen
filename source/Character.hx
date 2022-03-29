@@ -567,7 +567,7 @@ class Character extends FlxSprite
 				animation.addByPrefix('singLEFTmiss', 'knuckles rmiss', 12, false);
 				animation.addByPrefix('singRIGHTmiss', 'knuckles lmiss', 12, false);
 				animation.addByPrefix('singDOWNmiss', 'knuckles dmiss', 12, false);
-				animation.addByPrefix('cajita', 'knuckles rings', 4, false);
+				animation.addByPrefix('cajita', 'knuckles rings', 1, false);
 
 				addOffset('idle', -5);
 				addOffset("singUP", -29, 27);
@@ -618,7 +618,7 @@ class Character extends FlxSprite
 				animation.addByPrefix('singLEFTmiss', 'knuckles rmiss', 5, false);
 				animation.addByPrefix('singRIGHTmiss', 'knuckles lmiss', 5, false);
 				animation.addByPrefix('singDOWNmiss', 'knuckles dmiss', 5, false);
-				animation.addByPrefix('punch', 'knuckles punch', 6, false);
+				animation.addByPrefix('punch', 'knuckles punch', 4, true);
 
 				addOffset('idle', -5);
 				addOffset("singUP", -29, 27);

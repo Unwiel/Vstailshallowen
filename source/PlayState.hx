@@ -851,8 +851,8 @@ class PlayState extends MusicBeatState
 				dad.y += 100;
 			case 'monster-christmas':
 				dad.y += 130;
-			case 'dad':
-				camPos.x += 400;
+			case '2sonic.exe':
+				camPos.x -= 50;
 			case 'pico':
 				camPos.x += 600;
 				dad.y += 300;
@@ -876,15 +876,7 @@ class PlayState extends MusicBeatState
 		
 		boyfriend = new Boyfriend(770, 450, SONG.player1);
        
-        switch (SONG.player1)
-		{
-		   
-		      case 'knuckles-alt':
-		           boyfriend.y -= 550;
-				   boyfriend.x += 100;
-				   boyfriend.scale.set(0.8, 0.8); 
-		
-		} 
+        
 		// REPOSITIONING PER STAGE
 		switch (curStage)
 		{
@@ -910,7 +902,7 @@ class PlayState extends MusicBeatState
 			    boyfriend.scale.set(0.8, 0.8);
 			    dad.scale.set(0.8, 0.8);   
 				boyfriend.y -= 550;
-				boyfriend.x += 100;
+				boyfriend.x += 50;
 				dad.x -= 150;
 				dad.y -= 200; 
 			case 'school':
@@ -1006,7 +998,7 @@ class PlayState extends MusicBeatState
 
 		add(camFollow);
 
-		FlxG.camera.follow(camFollow, LOCKON, 0.04 * (30 / (cast (Lib.current.getChildAt(0), Main)).getFPS()));
+		FlxG.camera.follow(camFollow, LOCKON, 0.04 * (60 / (cast (Lib.current.getChildAt(0), Main)).getFPS()));
 		// FlxG.camera.setScrollBounds(0, FlxG.width, 0, FlxG.height);
 		FlxG.camera.zoom = defaultCamZoom;
 		FlxG.camera.focusOn(camFollow.getPosition());
@@ -3616,8 +3608,10 @@ class PlayState extends MusicBeatState
 					      remove(boyfriend);
                           boyfriend = new Boyfriend(770, 450, 'knuckles-alt');
                           add(boyfriend);
+                          boyfriend.scale.set(0.8, 0.8);
+                          boyfriend.y -= 550;
+				          boyfriend.x += 50;
                           
-                         
                     case 1565:
 					    FlxTween.tween(FlxG.camera, {zoom: 0.7}, 1, {ease: FlxEase.quadInOut});
 						new FlxTimer().start(1 , function(tmr:FlxTimer)
@@ -3626,8 +3620,7 @@ class PlayState extends MusicBeatState
 						});
 						
 					case 2144:
-
-                        boyfriend.playAnim('punch', false); 
+                        boyfriend.playAnim('punch', true); 
 					    FlxTween.tween(FlxG.camera, {zoom: 1.1}, 1, {ease: FlxEase.quadInOut});
 						new FlxTimer().start(1 , function(tmr:FlxTimer)
 						{
@@ -3647,14 +3640,17 @@ class PlayState extends MusicBeatState
                           bigmountain.visible = true;
                           broken.visible = true;
                           master.visible = false;
+                          FlxTween.tween(FlxG.camera, {zoom: 0.8}, 1, {ease: FlxEase.quadInOut});
+						  new FlxTimer().start(1 , function(tmr:FlxTimer)
+						  {
+							     defaultCamZoom = 0.8;
+						  }); 
                           FlxG.camera.shake(0.005);
-                         
-                      case 2177:
-						FlxTween.tween(FlxG.camera, {zoom: 0.8}, 1, {ease: FlxEase.quadInOut});
-						new FlxTimer().start(1 , function(tmr:FlxTimer)
-						{
-							defaultCamZoom = 0.8;
-						});
+                          boyfriend.y -= 550;
+				          boyfriend.x += 50;
+				          boyfriend.scale.set(0.8, 0.8);
+
+
 				}
 			}
 
