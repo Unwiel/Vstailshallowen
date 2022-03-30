@@ -798,17 +798,19 @@ class PlayState extends MusicBeatState
 					    add(master); 
 					
 					
+					    bigmountain = new FlxSprite(-590, -400).loadGraphic(Paths.image('bigmountain'));
+					    bigmountain.scrollFactor.set(0.7, 0.7);
+					    bigmountain.scale.set(1.2, 1.2); 
+					    add(bigmountain);  
+					    bigmountain.visible = false; 
+					
 					    broken = new FlxSprite(-1320, -400).loadGraphic(Paths.image('broken'));
 					    broken.scrollFactor.set(0.8, 0.8);
 					    broken.scale.set(1.2, 1.2); 
 					    add(broken);
 					    broken.visible = false;
 					   
-					    bigmountain = new FlxSprite(-590, -400).loadGraphic(Paths.image('bigmountain'));
-					    bigmountain.scrollFactor.set(0.7, 0.7);
-					    bigmountain.scale.set(1.2, 1.2); 
-					    add(bigmountain);  
-					    bigmountain.visible = false; 
+					    
 					    
 				}
 		}
@@ -3598,7 +3600,7 @@ class PlayState extends MusicBeatState
 						});
 						
 					case 1552:
-					      boyfriend.playAnim('cajita', false);
+					      boyfriend.playAnim('cajita', true);
 					
 					case 1559:
 					      FlxG.camera.flash(FlxColor.WHITE, 1);
@@ -3620,7 +3622,7 @@ class PlayState extends MusicBeatState
 						});
 						
 					case 2144:
-                        boyfriend.playAnim('punch', true); 
+                        boyfriend.playAnim('punch', false); 
 					    FlxTween.tween(FlxG.camera, {zoom: 1.1}, 1, {ease: FlxEase.quadInOut});
 						new FlxTimer().start(1 , function(tmr:FlxTimer)
 						{
@@ -3645,10 +3647,10 @@ class PlayState extends MusicBeatState
 						  {
 							     defaultCamZoom = 0.8;
 						  }); 
-                          FlxG.camera.shake(0.5);
-                          boyfriend.y -= 500;
-				          boyfriend.x -= 100;
-				          boyfriend.scale.set(0.4, 0.4);
+                          FlxG.camera.shake(0.05);
+                          boyfriend.y -= 450;
+				          boyfriend.x -= 200;
+				          boyfriend.scale.set(0.6, 0.6);
 
 
 				}
