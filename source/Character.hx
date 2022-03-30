@@ -559,15 +559,15 @@ class Character extends FlxSprite
 				var tex = Paths.getSparrowAtlas('characters/knuckles');
 				frames = tex;
 				animation.addByPrefix('idle', 'knuckles idle', 14, false);
-				animation.addByPrefix('singUP', 'knuckles up', 12, false);
-				animation.addByPrefix('singRIGHT', 'knuckles left', 12, false);
-				animation.addByPrefix('singLEFT', 'knuckles right', 12, false);
-				animation.addByPrefix('singDOWN', 'knuckles down', 12, false);
-				animation.addByPrefix('singUPmiss', 'knuckles umiss', 12, false);
-				animation.addByPrefix('singLEFTmiss', 'knuckles rmiss', 12, false);
-				animation.addByPrefix('singRIGHTmiss', 'knuckles lmiss', 12, false);
-				animation.addByPrefix('singDOWNmiss', 'knuckles dmiss', 12, false);
-				animation.addByPrefix('cajita', 'knuckles rings', 1, false);
+				animation.addByPrefix('singUP', 'knuckles up', 24, false);
+				animation.addByPrefix('singRIGHT', 'knuckles left', 24, false);
+				animation.addByPrefix('singLEFT', 'knuckles right', 24, false);
+				animation.addByPrefix('singDOWN', 'knuckles down', 24, false);
+				animation.addByPrefix('singUPmiss', 'knuckles umiss', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'knuckles rmiss', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'knuckles lmiss', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'knuckles dmiss', 24, false);
+				animation.addByPrefix('cajita', 'knuckles rings', 24, false);
 
 				addOffset('idle', -5);
 				addOffset("singUP", -29, 27);
@@ -589,10 +589,10 @@ class Character extends FlxSprite
 				tex = Paths.getSparrowAtlas('characters/knucklesonicexe', 'shared');
 				frames = tex;
 				animation.addByPrefix('idle', 'knucklesonicexe idle', 12);
-				animation.addByPrefix('singUP', 'knucklesonicexe up', 5);
-				animation.addByPrefix('singRIGHT', 'knucklesonicexe right', 5);
-				animation.addByPrefix('singDOWN', 'knucklesonicexe down', 5);
-				animation.addByPrefix('singLEFT', 'knucklesonicexe left', 5);
+				animation.addByPrefix('singUP', 'knucklesonicexe up', 24);
+				animation.addByPrefix('singRIGHT', 'knucklesonicexe right', 24);
+				animation.addByPrefix('singDOWN', 'knucklesonicexe down', 24);
+				animation.addByPrefix('singLEFT', 'knucklesonicexe left', 24);
 				animation.addByPrefix('ending', 'knucklesonicexe shit', 1, false);
 
 				addOffset('idle');
@@ -610,15 +610,15 @@ class Character extends FlxSprite
 				var tex = Paths.getSparrowAtlas('characters/knuckles');
 				frames = tex;
 				animation.addByPrefix('idle', 'knuckles 1idle', 14, false);
-				animation.addByPrefix('singUP', 'knuckles 1up', 5, false);
-				animation.addByPrefix('singRIGHT', 'knuckles 1left', 5, false);
-				animation.addByPrefix('singLEFT', 'knuckles 1right', 5, false);
-				animation.addByPrefix('singDOWN', 'knuckles 1down', 5, false);
-				animation.addByPrefix('singUPmiss', 'knuckles umiss', 5, false);
-				animation.addByPrefix('singLEFTmiss', 'knuckles rmiss', 5, false);
-				animation.addByPrefix('singRIGHTmiss', 'knuckles lmiss', 5, false);
-				animation.addByPrefix('singDOWNmiss', 'knuckles dmiss', 5, false);
-				animation.addByPrefix('punch', 'knuckles punch', 4, true);
+				animation.addByPrefix('singUP', 'knuckles 1up', 24, false);
+				animation.addByPrefix('singRIGHT', 'knuckles 1left', 24, false);
+				animation.addByPrefix('singLEFT', 'knuckles 1right', 24, false);
+				animation.addByPrefix('singDOWN', 'knuckles 1down', 24, false);
+				animation.addByPrefix('singUPmiss', 'knuckles umiss', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'knuckles rmiss', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'knuckles lmiss', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'knuckles dmiss', 24, false);
+				animation.addByPrefix('punch', 'knuckles punch', 24, true);
 
 				addOffset('idle', -5);
 				addOffset("singUP", -29, 27);
@@ -638,7 +638,7 @@ class Character extends FlxSprite
 			case 'rings':
 				var tex = Paths.getSparrowAtlas('characters/rings');
 				frames = tex;
-				animation.addByPrefix('idle', 'rings idle', 14, false);
+				animation.addByPrefix('idle', 'rings idle', 14, true);
 				animation.addByPrefix('singUP', 'rings idle', 5, false);
 				animation.addByPrefix('singRIGHT', 'rings idle', 5, false);
 				animation.addByPrefix('singLEFT', 'rings idle', 5, false);

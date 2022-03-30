@@ -851,7 +851,7 @@ class PlayState extends MusicBeatState
 				dad.y += 100;
 			case 'monster-christmas':
 				dad.y += 130;
-			case '2sonic.exe':
+			case '2sonicexe':
 				camPos.x -= 50;
 			case 'pico':
 				camPos.x += 600;
@@ -2018,7 +2018,7 @@ class PlayState extends MusicBeatState
 		/* if (FlxG.keys.justPressed.NINE)
 			FlxG.switchState(new Charting()); */
 
-		#if debug
+		
 		if (FlxG.keys.justPressed.EIGHT)
 		{
 			FlxG.switchState(new AnimationDebug(SONG.player2));
@@ -2043,7 +2043,7 @@ class PlayState extends MusicBeatState
 			#end
 		}
 
-		#end
+		
 
 		if (startingSong)
 		{
@@ -3645,10 +3645,10 @@ class PlayState extends MusicBeatState
 						  {
 							     defaultCamZoom = 0.8;
 						  }); 
-                          FlxG.camera.shake(0.005);
-                          boyfriend.y -= 550;
-				          boyfriend.x += 50;
-				          boyfriend.scale.set(0.8, 0.8);
+                          FlxG.camera.shake(0.5);
+                          boyfriend.y -= 500;
+				          boyfriend.x -= 100;
+				          boyfriend.scale.set(0.4, 0.4);
 
 
 				}
