@@ -592,7 +592,7 @@ class Character extends FlxSprite
 				animation.addByPrefix('singUP', 'knucklesonicexe up', 15);
 				animation.addByPrefix('singRIGHT', 'knucklesonicexe right', 15);
 				animation.addByPrefix('singDOWN', 'knucklesonicexe down', 15);
-				animation.addByPrefix('singLEFT', 'knucklesonicexe left', 15;
+				animation.addByPrefix('singLEFT', 'knucklesonicexe left', 15);
 				animation.addByPrefix('ending', 'knucklesonicexe shit', 1, false);
 
 				addOffset('idle');
