@@ -684,11 +684,11 @@ class Character extends FlxSprite
 				tex = Paths.getSparrowAtlas('characters/shhhhh', 'shared');
 				frames = tex;
 				animation.addByPrefix('idle', 'shhhhh idle', 12);
-				animation.addByPrefix('singUP', 'shhhhh idle, 15);
-				animation.addByPrefix('singRIGHT', 'shhhhh idle, 15);
+				animation.addByPrefix('singUP', 'shhhhh idle', 15);
+				animation.addByPrefix('singRIGHT', 'shhhhh idle', 15);
 				animation.addByPrefix('singDOWN', 'shhhhh idle', 15);
 				animation.addByPrefix('singLEFT', 'shhhhh idle', 15);
-				animation.addByPrefix('ending', 'shhhhh idle, 1, false);
+				animation.addByPrefix('ending', 'shhhhh idle', 1, false);
 
 				addOffset('idle');
 				addOffset("singUP", -6, 50);
