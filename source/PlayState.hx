@@ -3628,11 +3628,11 @@ class PlayState extends MusicBeatState
                           boyfriend.scale.set(0.8, 0.8);
                           boyfriend.y -= 550;
 				          boyfriend.x += 50;
-					    FlxTween.tween(FlxG.camera, {zoom: 1.1}, 1, {ease: FlxEase.quadInOut});
-						new FlxTimer().start(1 , function(tmr:FlxTimer)
-						{
-							defaultCamZoom = 1.1;
-						});
+					      FlxTween.tween(FlxG.camera, {zoom: 1.1}, 1, {ease: FlxEase.quadInOut});
+						  new FlxTimer().start(1 , function(tmr:FlxTimer)
+						  {
+							     defaultCamZoom = 1.1;
+						  });
 						
 					case 2160:
 					      dad.playAnim('ending', false);

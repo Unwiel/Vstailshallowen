@@ -567,7 +567,7 @@ class Character extends FlxSprite
 				animation.addByPrefix('singLEFTmiss', 'knuckles rmiss', 15, false);
 				animation.addByPrefix('singRIGHTmiss', 'knuckles lmiss', 15, false);
 				animation.addByPrefix('singDOWNmiss', 'knuckles dmiss', 15, false);
-				animation.addByPrefix('cajita', 'knuckles rings', 7, false);
+				animation.addByPrefix('cajita', 'knuckles rings', 15, false);
 
 				addOffset('idle', -5);
 				addOffset("singUP", -29, 27);
@@ -586,7 +586,7 @@ class Character extends FlxSprite
 				healthbarColor = FlxColor.fromRGB(255, 0, 0);
 				
 			case 'punch':
-				tex = Paths.getSparrowAtlas('characters/knucklesonicexe', 'shared');
+				tex = Paths.getSparrowAtlas('characters/knuckles', 'shared');
 				frames = tex;
 				animation.addByPrefix('idle', 'knuckles punch', 12);
 				animation.addByPrefix('singUP', 'knuckles punch', 15);
