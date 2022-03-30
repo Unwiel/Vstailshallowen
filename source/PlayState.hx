@@ -3599,7 +3599,7 @@ class PlayState extends MusicBeatState
 							defaultCamZoom = 1.1;
 						});
 						
-					case 1552:
+					case 1554:
 					      boyfriend.playAnim('cajita', true);
 					
 					case 1559:
@@ -3622,7 +3622,12 @@ class PlayState extends MusicBeatState
 						});
 						
 					case 2144:
-                        boyfriend.playAnim('punch', false); 
+                          remove(boyfriend);
+                          boyfriend = new Boyfriend(770, 450, 'punch');
+                          add(boyfriend);
+                          boyfriend.scale.set(0.8, 0.8);
+                          boyfriend.y -= 550;
+				          boyfriend.x += 50;
 					    FlxTween.tween(FlxG.camera, {zoom: 1.1}, 1, {ease: FlxEase.quadInOut});
 						new FlxTimer().start(1 , function(tmr:FlxTimer)
 						{
@@ -3651,7 +3656,13 @@ class PlayState extends MusicBeatState
                           boyfriend.y -= 450;
 				          boyfriend.x -= 200;
 				          boyfriend.scale.set(0.6, 0.6);
+				
+				 case 2304:
 
+                          dad = new Character(300, 300, 'shhh');
+                          add(dad);
+                          dad.scale.set(0.8, 0.8);
+                          
 
 				}
 			}

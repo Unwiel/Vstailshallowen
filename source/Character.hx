@@ -567,7 +567,7 @@ class Character extends FlxSprite
 				animation.addByPrefix('singLEFTmiss', 'knuckles rmiss', 15, false);
 				animation.addByPrefix('singRIGHTmiss', 'knuckles lmiss', 15, false);
 				animation.addByPrefix('singDOWNmiss', 'knuckles dmiss', 15, false);
-				animation.addByPrefix('cajita', 'knuckles rings', 10, false);
+				animation.addByPrefix('cajita', 'knuckles rings', 7, false);
 
 				addOffset('idle', -5);
 				addOffset("singUP", -29, 27);
@@ -585,24 +585,25 @@ class Character extends FlxSprite
 				
 				healthbarColor = FlxColor.fromRGB(255, 0, 0);
 				
-			case '2sonicexe':
+			case 'punch':
 				tex = Paths.getSparrowAtlas('characters/knucklesonicexe', 'shared');
 				frames = tex;
-				animation.addByPrefix('idle', 'knucklesonicexe idle', 12);
-				animation.addByPrefix('singUP', 'knucklesonicexe up', 15);
-				animation.addByPrefix('singRIGHT', 'knucklesonicexe right', 15);
-				animation.addByPrefix('singDOWN', 'knucklesonicexe down', 15);
-				animation.addByPrefix('singLEFT', 'knucklesonicexe left', 15);
-				animation.addByPrefix('ending', 'knucklesonicexe shit', 1, false);
+				animation.addByPrefix('idle', 'knuckles punch', 12);
+				animation.addByPrefix('singUP', 'knuckles punch', 15);
+				animation.addByPrefix('singRIGHT', 'knuckles punch', 15);
+				animation.addByPrefix('singDOWN', 'knuckles punch', 15);
+				animation.addByPrefix('singLEFT', 'knuckles punch', 15);
+				animation.addByPrefix('ending', 'knuckles punch', 1, false);
 
-				addOffset('idle');
-				addOffset("singUP", -6, 50);
-				addOffset("singRIGHT", 0, 27);
-				addOffset("singLEFT", -10, 10);
-				addOffset("singDOWN", 0, -30);
-				addOffset("ending");
+				addOffset('idle', -5);
+				addOffset("singUP", -29, 27);
+				addOffset("singRIGHT", -38, -7);
+				addOffset("singLEFT", 12, -6);
+				addOffset("singDOWN", -10, -50);
 
 				playAnim('idle'); 
+				
+				flipX = true;
 				
 				healthbarColor = FlxColor.fromRGB(44, 90, 139);
 				
@@ -656,6 +657,49 @@ class Character extends FlxSprite
 				flipX = true;
 				
 				healthbarColor = FlxColor.fromRGB(255, 0, 0);
+				
+				
+			case '2sonicexe':
+				tex = Paths.getSparrowAtlas('characters/knucklesonicexe', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'knucklesonicexe idle', 12);
+				animation.addByPrefix('singUP', 'knucklesonicexe up', 15);
+				animation.addByPrefix('singRIGHT', 'knucklesonicexe right', 15);
+				animation.addByPrefix('singDOWN', 'knucklesonicexe down', 15);
+				animation.addByPrefix('singLEFT', 'knucklesonicexe left', 15);
+				animation.addByPrefix('ending', 'knucklesonicexe shit', 1, false);
+
+				addOffset('idle');
+				addOffset("singUP", -6, 50);
+				addOffset("singRIGHT", 0, 27);
+				addOffset("singLEFT", -10, 10);
+				addOffset("singDOWN", 0, -30);
+				addOffset("ending");
+
+				playAnim('idle'); 
+				
+				healthbarColor = FlxColor.fromRGB(44, 90, 139); 
+				
+			case 'shhh':
+				tex = Paths.getSparrowAtlas('characters/shhhhh', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'shhhhh idle', 12);
+				animation.addByPrefix('singUP', 'shhhhh idle, 15);
+				animation.addByPrefix('singRIGHT', 'shhhhh idle, 15);
+				animation.addByPrefix('singDOWN', 'shhhhh idle', 15);
+				animation.addByPrefix('singLEFT', 'shhhhh idle', 15);
+				animation.addByPrefix('ending', 'shhhhh idle, 1, false);
+
+				addOffset('idle');
+				addOffset("singUP", -6, 50);
+				addOffset("singRIGHT", 0, 27);
+				addOffset("singLEFT", -10, 10);
+				addOffset("singDOWN", 0, -30);
+				addOffset("ending");
+
+				playAnim('idle'); 
+				
+				healthbarColor = FlxColor.fromRGB(44, 90, 139);
 		}
 
 		dance();
