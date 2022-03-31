@@ -570,7 +570,7 @@ class Character extends FlxSprite
 				animation.addByPrefix('cajita', 'knuckles rings', 15, false);
 
 				addOffset('idle', -5);
-				addOffset("singUP", -29, 27);
+				addOffset("singUP", -11, -3);
 				addOffset("singRIGHT", -38, -7);
 				addOffset("singLEFT", 12, -6);
 				addOffset("singDOWN", -10, -50);
@@ -622,7 +622,7 @@ class Character extends FlxSprite
 				animation.addByPrefix('punch', 'knuckles punch', 15, true);
 
 				addOffset('idle', -5);
-				addOffset("singUP", -29, 27);
+				addOffset("singUP", -11, -3);
 				addOffset("singRIGHT", -38, -7);
 				addOffset("singLEFT", 12, -6);
 				addOffset("singDOWN", -10, -50);
@@ -670,10 +670,10 @@ class Character extends FlxSprite
 				animation.addByPrefix('ending', 'knucklesonicexe shit', 1, false);
 
 				addOffset('idle');
-				addOffset("singUP", -6, 50);
+				addOffset("singUP", -7, -1);
 				addOffset("singRIGHT", 0, 27);
 				addOffset("singLEFT", -10, 10);
-				addOffset("singDOWN", 0, -30);
+				addOffset("singDOWN", 0, 12);
 				addOffset("ending");
 
 				playAnim('idle'); 
@@ -700,6 +700,46 @@ class Character extends FlxSprite
 				playAnim('idle'); 
 				
 				healthbarColor = FlxColor.fromRGB(44, 90, 139);
+				
+			case 'robotnik':
+				var tex = Paths.getSparrowAtlas('characters/robotnik');
+				frames = tex;
+				animation.addByPrefix('idle', 'robotnik idle', 13, false);
+				animation.addByPrefix('singUP', 'robotnik up', 13, false);
+				animation.addByPrefix('singLEFT', 'robotnik right', 14, false);
+				animation.addByPrefix('singRIGHT', 'robotnik left', 13, false);
+				animation.addByPrefix('singDOWN', 'robotnik down', 13, false);
+
+				addOffset('idle', -5);
+				addOffset("singUP", -29, 27);
+				addOffset("singRIGHT", -38, -7);
+				addOffset("singLEFT", 12, -6);
+				addOffset("singDOWN", -10, -50);
+				
+				playAnim('idle');
+				
+				healthbarColor = FlxColor.fromRGB(255, 0, 0);
+
+				flipX = true;
+				
+			case 'eggmobile':
+				tex = Paths.getSparrowAtlas('characters/eggmobile', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'eggmobile idle', 12);
+				animation.addByPrefix('singUP', 'eggmobile up', 15);
+				animation.addByPrefix('singRIGHT', 'eggmobile right', 15);
+				animation.addByPrefix('singDOWN', 'eggmobile down', 15);
+				animation.addByPrefix('singLEFT', 'eggmobile left', 15);
+
+				addOffset('idle');
+				addOffset("singUP", -7, -1);
+				addOffset("singRIGHT", 0, 27);
+				addOffset("singLEFT", -10, 10);
+				addOffset("singDOWN", 0, 12);
+
+				playAnim('idle'); 
+				
+				healthbarColor = FlxColor.fromRGB(44, 90, 139); 
 		}
 
 		dance();
@@ -730,7 +770,7 @@ class Character extends FlxSprite
 	override function update(elapsed:Float)
 	{
 	         
-		if (!curCharacter.startsWith('bf') && !curCharacter.startsWith('tailspikachu') && !curCharacter.startsWith('knuckles'))
+		if (!curCharacter.startsWith('bf') && !curCharacter.startsWith('tailspikachu') && !curCharacter.startsWith('knuckles') && !curCharacter.startsWith('robotnik'))
 		{
 			if (animation.curAnim.name.startsWith('sing'))
 			{

@@ -178,6 +178,11 @@ class PlayState extends MusicBeatState
 	var broken:FlxSprite;
 	var bigmountain:FlxSprite;
 
+	// uw
+	var space:FlxSprite;
+	var globe:FlxSprite;
+	var fast:FlxSprite;
+
 	var limo:FlxSprite;
 	var grpLimoDancers:FlxTypedGroup<BackgroundDancer>;
 	var grpNoteSplashes:FlxTypedGroup<NoteSplash>;
@@ -813,6 +818,29 @@ class PlayState extends MusicBeatState
 					    
 					    
 				}
+				
+			case 'space':
+				{
+						defaultCamZoom = 0.7;
+						curStage = 'space';
+						
+					    space = new FlxSprite(-640, -370).loadGraphic(Paths.image('space'));
+					    space.scrollFactor.set(1.6, 1.6);
+					    space.scale.set(1.3, 1.3); 
+					    add(space);
+					
+					    globe = new FlxSprite(-800, -400).loadGraphic(Paths.image('mast'));
+					    globe.scrollFactor.set(0.9, 0.9);
+					    globe.scale.set(1.5, 1.5); 
+					    add(globe); 
+					
+					
+					    fast = new FlxSprite(-530, -500).loadGraphic(Paths.image('fast'));
+					    fast.scrollFactor.set(0.7, 0.7);
+					    fast.scale.set(1.5, 1.5); 
+					    add(fast);  
+					    
+				}
 		}
 		var gfVersion:String = 'gf';
 
@@ -904,7 +932,15 @@ class PlayState extends MusicBeatState
 			    boyfriend.scale.set(0.8, 0.8);
 			    dad.scale.set(0.8, 0.8);   
 				boyfriend.y -= 550;
-				boyfriend.x += 50;
+				boyfriend.x += 30;
+				dad.x -= 150;
+				dad.y -= 200;
+				
+			case 'space':
+			    boyfriend.scale.set(1.3, 1.3);
+			    dad.scale.set(0.5, 0.5);   
+				boyfriend.y -= 550;
+				boyfriend.x += 30;
 				dad.x -= 150;
 				dad.y -= 200; 
 			case 'school':
@@ -2242,6 +2278,8 @@ class PlayState extends MusicBeatState
 				switch (curStage)
 				{
 					case 'halloweenbg':
+						camFollow.x = boyfriend.getMidpoint().x - 350;
+					case 'knucklesstage':
 						camFollow.x = boyfriend.getMidpoint().x - 350;
 					case 'mall':
 						camFollow.y = boyfriend.getMidpoint().y - 200;
@@ -3599,7 +3637,7 @@ class PlayState extends MusicBeatState
 							defaultCamZoom = 1.1;
 						});
 						
-					case 1554:
+					case 1556:
 					      boyfriend.playAnim('cajita', true);
 					
 					case 1559:
@@ -3658,10 +3696,14 @@ class PlayState extends MusicBeatState
 				          boyfriend.scale.set(0.6, 0.6);
 				
 				 case 2304:
-
-                          dad = new Character(300, 300, 'shhh');
+				          FlxTween.tween(FlxG.camera, {zoom: 1.2}, 1, {ease: FlxEase.quadInOut}); 
+                          new FlxTimer().start(1 , function(tmr:FlxTimer)
+						  {
+							     defaultCamZoom = 1.2;
+						  });
+                          dad = new Character(500, 500, 'shhh');
                           add(dad);
-                          dad.scale.set(0.8, 0.8);
+                          dad.scale.set(0.5, 0.5);
                           
 
 				}
