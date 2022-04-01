@@ -829,7 +829,7 @@ class PlayState extends MusicBeatState
 					    space.scale.set(1.3, 1.3); 
 					    add(space);
 					
-					    globe = new FlxSprite(-800, -400).loadGraphic(Paths.image('mast'));
+					    globe = new FlxSprite(-800, -400).loadGraphic(Paths.image('globe'));
 					    globe.scrollFactor.set(0.9, 0.9);
 					    globe.scale.set(1.5, 1.5); 
 					    add(globe); 
@@ -883,6 +883,9 @@ class PlayState extends MusicBeatState
 				dad.y += 130;
 			case '2sonicexe':
 				camPos.x -= 50;
+			case 'eggmobile':
+				camPos.x -= 50;
+				dad.x -= 150; 
 			case 'pico':
 				camPos.x += 600;
 				dad.y += 300;
@@ -2281,6 +2284,9 @@ class PlayState extends MusicBeatState
 						camFollow.x = boyfriend.getMidpoint().x - 350;
 					case 'knucklesstage':
 						camFollow.x = boyfriend.getMidpoint().x - 350;
+					case 'space':
+						camFollow.x = boyfriend.getMidpoint().x - 350;
+						camFollow.x = boyfriend.getMidpoint().y - 200;
 					case 'mall':
 						camFollow.y = boyfriend.getMidpoint().y - 200;
 					case 'school':
