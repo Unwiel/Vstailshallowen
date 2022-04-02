@@ -12,7 +12,7 @@ class WebViewPlayer extends FlxBasic
 {
 	public static var androidPath:String = 'file:///android_asset/assets/videos/';
 
-    public var finishCallback:Void->Void = null;
+        public var finishCallback:Void->Void = null;
 
 	public function new(source:String)
 	{
@@ -22,7 +22,8 @@ class WebViewPlayer extends FlxBasic
 		WebView.onURLChanging=onURLChanging;
 
 		WebView.open(androidPath + source + '.html', false, null, ['http://exitme(.*)']);
-	}
+
+	} 
 
 	function onClose() {
 		if (finishCallback != null)
