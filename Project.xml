@@ -94,8 +94,6 @@
 	<assets path="assets/week6"    library="week6"    exclude="*.ogg" if="web"/>
 	<assets path="assets/week6"    library="week6"    exclude="*.mp3" unless="web"/>
 
-        <assets path="assets/preload/videos" rename="assets/videos" include="*mp4" embed='false' />
-
         <assets path="assets/videos" exclude="*.mp3" if="web"/>
         <assets path="assets/videos" exclude="*.ogg" unless="web"/>
 	
