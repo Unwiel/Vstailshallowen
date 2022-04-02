@@ -31,11 +31,11 @@ class StoryMenuState extends MusicBeatState
 	public static var weekUnlocked:Array<Bool> = [true];
 
 	var weekCharacters:Array<Dynamic> = [
-		['', 'bf', 'gf']
+		['', '', '']
 	];
 
 	var weekNames:Array<String> = [
-		"im bored"
+		""
 	];
 
 	var txtWeekTitle:FlxText;
@@ -45,6 +45,8 @@ class StoryMenuState extends MusicBeatState
 	var txtTracklist:FlxText;
 
 	var grpWeekText:FlxTypedGroup<MenuItem>;
+	var sanic:FlxSprite;
+	var hardmode:FlxSprite;
 	var grpWeekCharacters:FlxTypedGroup<MenuCharacter>;
 
 	var grpLocks:FlxTypedGroup<FlxSprite>;
@@ -134,7 +136,7 @@ class StoryMenuState extends MusicBeatState
 		grpWeekCharacters.add(new MenuCharacter(850, 100, 0.5, true));
 
 		difficultySelectors = new FlxGroup();
-		add(difficultySelectors);
+		//add(difficultySelectors);
 
 		trace("Line 124");
 
@@ -143,7 +145,7 @@ class StoryMenuState extends MusicBeatState
 		leftArrow.animation.addByPrefix('idle', "arrow left");
 		leftArrow.animation.addByPrefix('press', "arrow push left");
 		leftArrow.animation.play('idle');
-		difficultySelectors.add(leftArrow);
+		//difficultySelectors.add(leftArrow);
 
 		sprDifficulty = new FlxSprite(leftArrow.x + 130, leftArrow.y);
 		sprDifficulty.frames = ui_tex;
@@ -153,19 +155,35 @@ class StoryMenuState extends MusicBeatState
 		sprDifficulty.animation.play('easy');
 		changeDifficulty();
 
-		difficultySelectors.add(sprDifficulty);
+		//difficultySelectors.add(sprDifficulty);
 
 		rightArrow = new FlxSprite(sprDifficulty.x + sprDifficulty.width + 50, leftArrow.y);
 		rightArrow.frames = ui_tex;
 		rightArrow.animation.addByPrefix('idle', 'arrow right');
 		rightArrow.animation.addByPrefix('press', "arrow push right", 24, false);
 		rightArrow.animation.play('idle');
-		difficultySelectors.add(rightArrow);
+		//difficultySelectors.add(rightArrow);
 
 		trace("Line 150");
 
 		add(yellowBG);
-		add(grpWeekCharacters);
+		
+		
+		
+		sanic = new FlxSprite(172, 50);
+		sanic.frames = Paths.getSparrowAtlas(Paths.image('Menu_Sonic'));
+		sanic.animation.addByPrefix('uw', 'Menu_Sonic', 24, false);
+		sanic.animation.play('uw');
+		sanic.scale.set(1, 1); 
+		add(sanic);
+		
+		hardmode = new FlxSprite(-90, -322);
+		hardmode.frames = Paths.getSparrowAtlas(Paths.image('brou'));
+		hardmode.animation.addByPrefix('uw', 'brou bro', 24, true);
+		hardmode.animation.play('uw');
+		add(hardmode);
+		
+		//add(grpWeekCharacters);
 
 		txtTracklist = new FlxText(FlxG.width * 0.05, yellowBG.x + yellowBG.height + 100, 0, "Tracks", 32);
 		txtTracklist.alignment = CENTER;
@@ -181,7 +199,7 @@ class StoryMenuState extends MusicBeatState
 		trace("Line 165");
 		
 		#if mobileC
-        addVirtualPad(FULL, A_B);
+        addVirtualPad(NONE, A_B);
         #end
 
 		super.create();

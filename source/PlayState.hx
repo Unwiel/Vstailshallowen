@@ -2294,7 +2294,7 @@ class PlayState extends MusicBeatState
 					case 'knucklesstage':
 						camFollow.x = boyfriend.getMidpoint().x - 350;
 					case 'space':
-						camFollow.x = boyfriend.getMidpoint().x - 150;
+						camFollow.x = boyfriend.getMidpoint().x - 50;
 						camFollow.x = boyfriend.getMidpoint().y - 200;
 					case 'mall':
 						camFollow.y = boyfriend.getMidpoint().y - 200;
@@ -3668,9 +3668,9 @@ class PlayState extends MusicBeatState
 			{
 				switch(curStep)
 				{
-					case 1551:
-					    FlxTween.tween(FlxG.camera, {zoom: 1.1}, 1, {ease: FlxEase.quadInOut});
-						new FlxTimer().start(1 , function(tmr:FlxTimer)
+					case 1555:
+					    FlxTween.tween(FlxG.camera, {zoom: 1.1}, 0.5, {ease: FlxEase.quadInOut});
+						new FlxTimer().start(0.5 , function(tmr:FlxTimer)
 						{
 							defaultCamZoom = 1.1;
 						});
@@ -3691,8 +3691,8 @@ class PlayState extends MusicBeatState
 				          boyfriend.x += 50;
                           
                     case 1565:
-					    FlxTween.tween(FlxG.camera, {zoom: 0.7}, 1, {ease: FlxEase.quadInOut});
-						new FlxTimer().start(1 , function(tmr:FlxTimer)
+					    FlxTween.tween(FlxG.camera, {zoom: 0.7}, 0.5, {ease: FlxEase.quadInOut});
+						new FlxTimer().start(0.5 , function(tmr:FlxTimer)
 						{
 							defaultCamZoom = 0.7;
 						});
@@ -3704,8 +3704,8 @@ class PlayState extends MusicBeatState
                           boyfriend.scale.set(0.8, 0.8);
                           boyfriend.y -= 550;
 				          boyfriend.x += 50;
-					      FlxTween.tween(FlxG.camera, {zoom: 1.1}, 1, {ease: FlxEase.quadInOut});
-						  new FlxTimer().start(1 , function(tmr:FlxTimer)
+					      FlxTween.tween(FlxG.camera, {zoom: 1.1}, 0.5, {ease: FlxEase.quadInOut});
+						  new FlxTimer().start(0.5 , function(tmr:FlxTimer)
 						  {
 							     defaultCamZoom = 1.1;
 						  });
@@ -3723,7 +3723,7 @@ class PlayState extends MusicBeatState
                           bigmountain.visible = true;
                           broken.visible = true;
                           master.visible = false;
-                          FlxTween.tween(FlxG.camera, {zoom: 0.8}, 1, {ease: FlxEase.quadInOut});
+                          FlxTween.tween(FlxG.camera, {zoom: 0.8}, 0.5, {ease: FlxEase.quadInOut});
 						  new FlxTimer().start(1 , function(tmr:FlxTimer)
 						  {
 							     defaultCamZoom = 0.8;
@@ -3734,7 +3734,7 @@ class PlayState extends MusicBeatState
 				          boyfriend.scale.set(0.6, 0.6);
 				
 				 case 2304:
-				          FlxTween.tween(FlxG.camera, {zoom: 1.2}, 1, {ease: FlxEase.quadInOut}); 
+				          FlxTween.tween(FlxG.camera, {zoom: 1.2}, 0.5, {ease: FlxEase.quadInOut}); 
                           new FlxTimer().start(1 , function(tmr:FlxTimer)
 						  {
 							     defaultCamZoom = 1.2;
