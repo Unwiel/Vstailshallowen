@@ -732,10 +732,10 @@ class Character extends FlxSprite
 				animation.addByPrefix('singLEFT', 'eggmobile left', 15);
 
 				addOffset('idle');
-				addOffset("singUP", -7, -1);
-				addOffset("singRIGHT", 0, 27);
-				addOffset("singLEFT", -10, 10);
-				addOffset("singDOWN", 0, 12);
+				addOffset("singUP", 0, 0);
+				addOffset("singRIGHT", 1, -1);
+				addOffset("singLEFT", -1, 1);
+				addOffset("singDOWN", 2, 1);
 
 				playAnim('idle'); 
 				

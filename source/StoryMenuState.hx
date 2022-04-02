@@ -53,6 +53,8 @@ class StoryMenuState extends MusicBeatState
 	var sprDifficulty:FlxSprite;
 	var leftArrow:FlxSprite;
 	var rightArrow:FlxSprite;
+	
+	var isCutscene:Bool = false;
 
 	override function create()
 	{
@@ -286,12 +288,27 @@ class StoryMenuState extends MusicBeatState
 			PlayState.SONG = Song.loadFromJson(StringTools.replace(PlayState.storyPlaylist[0]," ", "-").toLowerCase() + diffic, StringTools.replace(PlayState.storyPlaylist[0]," ", "-").toLowerCase());
 			PlayState.storyWeek = curWeek;
 			PlayState.campaignScore = 0;
-			new FlxTimer().start(1, function(tmr:FlxTimer)
+			if (curWeek == 0)
 			{
+				if (!isCutscene) // Checks if the current week is Tutorial.
+				{
+                                        var video = new WebViewPlayer('tail');                                                     
+                                        video.finishCallback = function() {                                                               
+                                                  LoadingState.loadAndSwitchState(new PlayState(), true);      
+                                        }
+					isCutscene = true;
+				}
+				else
+				{					
+			                LoadingState.loadAndSwitchState(new PlayState(), true);
+				}
+			}
+			else
 				LoadingState.loadAndSwitchState(new PlayState(), true);
-			});
 		}
-	}
+		
+	} 
+
 
 	function changeDifficulty(change:Int = 0):Void
 	{

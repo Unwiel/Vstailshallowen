@@ -271,17 +271,7 @@ class PlayState extends MusicBeatState
 			}
 			
 			
-		switch (curSong.toLowerCase())
-         {
-	        case 'timorous':
-		        playCutscene('tail');
-	        case 'minacious':
-		        playCutscene('knucklescutscene');
-		    case 'antagonize':
-		        playCutscene('Egg'); 
-	        default:
-		        startCountdown();
-         }
+		
 		
 		#if windows
 		executeModchart = FileSystem.exists(Paths.lua(songLowercase  + "/modchart"));
@@ -1892,33 +1882,9 @@ class PlayState extends MusicBeatState
 	
 	
 
-    function playCutscene(name:String)
-    {
-        var fileName:String = Paths.video(name);
-	    inCutscene = true;
+    
 
-	    var video = new WebViewPlayer(fileName);                                                     
-	    video.finishCallback = function()
-	    {
-		     startCountdown();
-	    }
-	    
-    }
-
-    function playEndCutscene(name:String)
-    {
-          var fileName:String = Paths.video(name);
-     
-	      inCutscene = true;
-
-	      var video = new WebViewPlayer(fileName);                                                      
-	      video.finishCallback = function()
-	      {
-		       SONG = Song.loadFromJson(storyPlaylist[0].toLowerCase());
-		       LoadingState.loadAndSwitchState(new PlayState());
-	      }
-	      
-    }
+    
 
 	private var paused:Bool = false;
 	var startedCountdown:Bool = false;
@@ -2721,6 +2687,29 @@ class PlayState extends MusicBeatState
 						luaModchart = null;
 					}
 					#end
+					
+					switch (SONG.song.toLowerCase())
+					{
+						case 'timorous':
+						{	
+							inCutscene = true;
+							paused = true;                                                       
+                                                        var video = new WebViewPlayer('knucklescutscene');                                                     
+                                                        video.finishCallback = function() {                                                               
+                                                               FlxG.switchState(new PlayState());             
+                                                        }
+						}
+
+						case 'minacious':
+						{
+							inCutscene = true;
+							paused = true;
+                                                        var video = new WebViewPlayer('Egg');                                                     
+                                                        video.finishCallback = function() {                                                               
+                                                               FlxG.switchState(new PlayState());             
+                                                        }
+						}
+					}
 
 					// if ()
 					StoryMenuState.weekUnlocked[Std.int(Math.min(storyWeek + 1, StoryMenuState.weekUnlocked.length - 1))] = true;
