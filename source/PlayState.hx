@@ -269,6 +269,19 @@ class PlayState extends MusicBeatState
 				case 'dad-battle': songLowercase = 'dadbattle';
 				case 'philly-nice': songLowercase = 'philly';
 			}
+			
+			
+		switch (curSong.toLowerCase())
+         {
+	        case 'timorous':
+		        playCutscene('tail');
+	        case 'minacious':
+		        playCutscene('knucklescutscene');
+		    case 'antagonize':
+		        playCutscene('Egg'); 
+	        default:
+		        startCountdown();
+         }
 		
 		#if windows
 		executeModchart = FileSystem.exists(Paths.lua(songLowercase  + "/modchart"));
@@ -810,7 +823,7 @@ class PlayState extends MusicBeatState
 					    bigmountain.visible = false; 
 					
 					    broken = new FlxSprite(-1320, -400).loadGraphic(Paths.image('broken'));
-					    broken.scrollFactor.set(0.8, 0.8);
+					    
 					    broken.scale.set(1.2, 1.2); 
 					    add(broken);
 					    broken.visible = false;
@@ -935,7 +948,7 @@ class PlayState extends MusicBeatState
 			    boyfriend.scale.set(0.8, 0.8);
 			    dad.scale.set(0.8, 0.8);   
 				boyfriend.y -= 550;
-				boyfriend.x += 30;
+				boyfriend.x += 10;
 				dad.x -= 150;
 				dad.y -= 200;
 				
@@ -1876,6 +1889,33 @@ class PlayState extends MusicBeatState
 		DiscordClient.changePresence(detailsText + " " + SONG.song + " (" + storyDifficultyText + ") " + Ratings.GenerateLetterRank(accuracy), "\nAcc: " + HelperFunctions.truncateFloat(accuracy, 2) + "% | Score: " + songScore + " | Misses: " + misses  , iconRPC);
 		#end
 	}
+	
+	
+
+    function playCutscene(name:String)
+    {
+	    inCutscene = true;
+
+	    var video = new WebViewPlayer();                                                     
+	    video.finishCallback = function()
+	    {
+		     startCountdown();
+	    }
+	    video.playVideo(Paths.video(name));
+    }
+
+    function playEndCutscene(name:String)
+    {
+	      inCutscene = true;
+
+	      var video = new WebViewPlayer();                                                      
+	      video.finishCallback = function()
+	      {
+		       SONG = Song.loadFromJson(storyPlaylist[0].toLowerCase());
+		       LoadingState.loadAndSwitchState(new PlayState());
+	      }
+	      video.playVideo(Paths.video(name));
+    }
 
 	private var paused:Bool = false;
 	var startedCountdown:Bool = false;
@@ -2285,7 +2325,7 @@ class PlayState extends MusicBeatState
 					case 'knucklesstage':
 						camFollow.x = boyfriend.getMidpoint().x - 350;
 					case 'space':
-						camFollow.x = boyfriend.getMidpoint().x - 350;
+						camFollow.x = boyfriend.getMidpoint().x - 150;
 						camFollow.x = boyfriend.getMidpoint().y - 200;
 					case 'mall':
 						camFollow.y = boyfriend.getMidpoint().y - 200;
