@@ -1897,7 +1897,7 @@ class PlayState extends MusicBeatState
         var fileName:String = Paths.video(name);
 	    inCutscene = true;
 
-	    var video = new WebViewPlayer(fileName));                                                     
+	    var video = new WebViewPlayer(fileName);                                                     
 	    video.finishCallback = function()
 	    {
 		     startCountdown();
@@ -1911,7 +1911,7 @@ class PlayState extends MusicBeatState
      
 	      inCutscene = true;
 
-	      var video = new WebViewPlayer(fileName));                                                      
+	      var video = new WebViewPlayer(fileName);                                                      
 	      video.finishCallback = function()
 	      {
 		       SONG = Song.loadFromJson(storyPlaylist[0].toLowerCase());
