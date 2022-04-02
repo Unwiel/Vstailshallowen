@@ -11,7 +11,7 @@ class WebViewPlayer extends FlxBasic {
 		super();
 
 	        #if android
-                WebView.playVideo('file:///android_asset/videos' + name, true);
+                WebView.playVideo('file:///android_asset/videos/' + name, true);
                 WebView.onComplete = function(){
 		        if (finishCallback != null){
 			        finishCallback();
