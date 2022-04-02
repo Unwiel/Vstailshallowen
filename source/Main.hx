@@ -62,7 +62,7 @@ class Main extends Sprite
 		}
 	}
 
-	public static var webmHandler:WebmHandler;
+	
 
         static public function getDataPath():String
         {
