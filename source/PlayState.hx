@@ -1894,27 +1894,30 @@ class PlayState extends MusicBeatState
 
     function playCutscene(name:String)
     {
+        var fileName:String = Paths.video(name);
 	    inCutscene = true;
 
-	    var video = new WebViewPlayer();                                                     
+	    var video = new WebViewPlayer(fileName));                                                     
 	    video.finishCallback = function()
 	    {
 		     startCountdown();
 	    }
-	    video.playVideo(Paths.video(name));
+	    
     }
 
     function playEndCutscene(name:String)
     {
+          var fileName:String = Paths.video(name);
+     
 	      inCutscene = true;
 
-	      var video = new WebViewPlayer();                                                      
+	      var video = new WebViewPlayer(fileName));                                                      
 	      video.finishCallback = function()
 	      {
 		       SONG = Song.loadFromJson(storyPlaylist[0].toLowerCase());
 		       LoadingState.loadAndSwitchState(new PlayState());
 	      }
-	      video.playVideo(Paths.video(name));
+	      
     }
 
 	private var paused:Bool = false;
