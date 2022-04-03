@@ -2294,8 +2294,8 @@ class PlayState extends MusicBeatState
 					case 'knucklesstage':
 						camFollow.x = boyfriend.getMidpoint().x - 200;
 					case 'space':
-						camFollow.x = boyfriend.getMidpoint().x - 50;
-						camFollow.x = boyfriend.getMidpoint().y - 70;
+						camFollow.x = boyfriend.getMidpoint().x + 100 ;
+						camFollow.y = boyfriend.getMidpoint().y - 70;
 					case 'mall':
 						camFollow.y = boyfriend.getMidpoint().y - 200;
 					case 'school':
