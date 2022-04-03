@@ -171,14 +171,14 @@ class StoryMenuState extends MusicBeatState
 		
 		
 		sanic = new FlxSprite(172, 50);
-		sanic.frames = Paths.getSparrowAtlas(Paths.image('Menu_Sonic'));
+		sanic.frames = Paths.getSparrowAtlas(Paths.image('images/Menu_Sonic','shared'));
 		sanic.animation.addByPrefix('uw', 'Menu_Sonic', 24, false);
 		sanic.animation.play('uw');
 		sanic.scale.set(1, 1); 
 		add(sanic);
 		
 		hardmode = new FlxSprite(-90, -322);
-		hardmode.frames = Paths.getSparrowAtlas(Paths.image('brou'));
+		hardmode.frames = Paths.getSparrowAtlas(Paths.image('images/brou','shared'));
 		hardmode.animation.addByPrefix('uw', 'brou bro', 24, true);
 		hardmode.animation.play('uw');
 		add(hardmode);

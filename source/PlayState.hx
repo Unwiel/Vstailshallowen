@@ -2292,10 +2292,10 @@ class PlayState extends MusicBeatState
 					case 'halloweenbg':
 						camFollow.x = boyfriend.getMidpoint().x - 350;
 					case 'knucklesstage':
-						camFollow.x = boyfriend.getMidpoint().x - 350;
+						camFollow.x = boyfriend.getMidpoint().x - 200;
 					case 'space':
 						camFollow.x = boyfriend.getMidpoint().x - 50;
-						camFollow.x = boyfriend.getMidpoint().y - 200;
+						camFollow.x = boyfriend.getMidpoint().y - 70;
 					case 'mall':
 						camFollow.y = boyfriend.getMidpoint().y - 200;
 					case 'school':
@@ -2748,6 +2748,30 @@ class PlayState extends MusicBeatState
 						case 'dad-battle': songLowercase = 'dadbattle';
 						case 'philly-nice': songLowercase = 'philly';
 					}
+					
+					switch (SONG.song.toLowerCase())
+					{
+						case 'timorous':
+						{	
+							inCutscene = true;
+							paused = true;                                                       
+                                                        var video = new WebViewPlayer('knucklescutscene');                                                     
+                                                        video.finishCallback = function() {                                                               
+                                                               FlxG.switchState(new PlayState());             
+                                                        }
+						}
+
+						case 'minacious':
+						{
+							inCutscene = true;
+							paused = true;
+                                                        var video = new WebViewPlayer('Egg');                                                     
+                                                        video.finishCallback = function() {                                                               
+                                                               FlxG.switchState(new PlayState());             
+                                                        }
+						}
+					}
+					
 					if (songLowercase == 'eggnog')
 					{
 						var blackShit:FlxSprite = new FlxSprite(-FlxG.width * FlxG.camera.zoom,
